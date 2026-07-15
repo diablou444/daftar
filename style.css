@@ -1,0 +1,213 @@
+ /* ============================================
+
+   مدونة "دفتر" — نظام تصميم على شكل دفتر ملاحظات
+
+   ============================================ */
+
+
+
+:root {
+
+  --paper: #ECE4D0;
+
+  --paper-light: #F5EFE1;
+
+  --ink: #2B2620;
+
+  --ink-soft: #55503F;
+
+  --ochre: #C1811F;
+
+  --teal: #1F5F5B;
+
+  --line: #C9BC9C;
+
+  --card-shadow: rgba(43, 38, 32, 0.18);
+
+
+
+  --font-display: 'Aref Ruqaa', serif;
+
+  --font-body: 'Tajawal', sans-serif;
+
+}
+
+
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+
+
+body {
+
+  margin: 0;
+
+  background-color: var(--paper);
+
+  background-image:
+
+    linear-gradient(90deg, rgba(255,255,255,0.35) 1px, transparent 1px),
+
+    linear-gradient(rgba(201,188,156,0.35) 1px, transparent 1px);
+
+  background-size: 100% 2.2em, 100% 2.2em;
+
+  color: var(--ink);
+
+  font-family: var(--font-body);
+
+  line-height: 1.8;
+
+  direction: rtl;
+
+}
+
+
+
+a { color: var(--teal); text-decoration: none; }
+
+a:hover { text-decoration: underline; }
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+
+  outline: 3px solid var(--ochre);
+
+  outline-offset: 2px;
+
+}
+
+
+
+img { max-width: 100%; display: block; }
+
+
+
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+
+
+/* الهيدر */
+
+header.site-header { padding: 36px 0 18px; border-bottom: 3px solid var(--ink); }
+
+.brand { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+.brand-title { font-family: var(--font-display); font-size: 2.6rem; font-weight: 700; color: var(--ink); }
+
+.brand-title span { color: var(--ochre); }
+
+.brand-tagline { font-size: 0.95rem; color: var(--ink-soft); }
+
+nav.main-nav { margin-top: 14px; display: flex; gap: 22px; flex-wrap: wrap; font-weight: 700; }
+
+nav.main-nav a { color: var(--ink); padding-bottom: 3px; border-bottom: 2px solid transparent; }
+
+nav.main-nav a:hover, nav.main-nav a.active { color: var(--ochre); border-bottom-color: var(--ochre); text-decoration: none; }
+
+
+
+/* الهيرو */
+
+.hero { padding: 48px 0 20px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: center; }
+
+.hero h1 { font-family: var(--font-display); font-size: 2.3rem; line-height: 1.35; margin: 0 0 14px; }
+
+.hero p { color: var(--ink-soft); font-size: 1.05rem; max-width: 46ch; }
+
+@media (max-width: 720px) { .hero { grid-template-columns: 1fr; } }
+
+
+
+/* بطاقات المقالات */
+
+.post-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin: 20px 0 50px; }
+
+.post-card { background: var(--paper-light); border: 1px solid var(--line); padding: 22px 20px 20px; position: relative; box-shadow: 4px 6px 0 var(--card-shadow); transition: transform 0.15s ease, box-shadow 0.15s ease; }
+
+.post-card:nth-child(3n+1) { transform: rotate(-0.6deg); }
+
+.post-card:nth-child(3n+2) { transform: rotate(0.4deg); }
+
+.post-card:nth-child(3n)   { transform: rotate(-0.2deg); }
+
+.post-card:hover { transform: rotate(0deg) translateY(-3px); box-shadow: 6px 10px 0 var(--card-shadow); }
+
+.post-card::before { content: ""; position: absolute; top: -10px; right: 24px; width: 46px; height: 18px; background: var(--ochre); opacity: 0.85; transform: rotate(-3deg); }
+
+.post-card .tag { display: inline-block; font-size: 0.78rem; font-weight: 700; color: var(--teal); border: 1px solid var(--teal); border-radius: 999px; padding: 2px 10px; margin-bottom: 10px; }
+
+.post-card h3 { font-family: var(--font-display); font-size: 1.35rem; margin: 0 0 8px; line-height: 1.4; }
+
+.post-card p { color: var(--ink-soft); font-size: 0.95rem; margin: 0 0 14px; }
+
+.post-card .meta { font-size: 0.82rem; color: var(--ink-soft); border-top: 1px dashed var(--line); padding-top: 10px; display: flex; justify-content: space-between; }
+
+
+
+/* مساحات الإعلانات */
+
+.ad-slot { border: 2px dashed var(--line); background: rgba(255,255,255,0.4); color: var(--ink-soft); font-size: 0.85rem; text-align: center; padding: 18px 10px; margin: 34px 0; }
+
+.ad-slot span { display: block; font-weight: 700; margin-bottom: 4px; }
+
+
+
+/* صفحة المقال */
+
+article.post { padding: 40px 0 60px; max-width: 760px; margin: 0 auto; }
+
+article.post .tag { display: inline-block; font-size: 0.8rem; font-weight: 700; color: var(--teal); border: 1px solid var(--teal); border-radius: 999px; padding: 3px 12px; margin-bottom: 16px; }
+
+article.post h1 { font-family: var(--font-display); font-size: 2.1rem; line-height: 1.4; margin: 0 0 10px; }
+
+article.post .meta { color: var(--ink-soft); font-size: 0.9rem; margin-bottom: 28px; border-bottom: 1px dashed var(--line); padding-bottom: 18px; }
+
+article.post .content p { font-size: 1.08rem; margin-bottom: 20px; }
+
+article.post .content h2 { font-family: var(--font-display); font-size: 1.5rem; margin: 34px 0 14px; }
+
+article.post .content blockquote { border-right: 4px solid var(--ochre); margin: 24px 0; padding: 6px 20px; color: var(--ink-soft); font-style: italic; background: rgba(255,255,255,0.4); }
+
+
+
+/* صفحات عادية */
+
+.page-content { padding: 44px 0 60px; max-width: 720px; margin: 0 auto; }
+
+.page-content h1 { font-family: var(--font-display); font-size: 2.1rem; margin-bottom: 20px; }
+
+.page-content p { font-size: 1.05rem; margin-bottom: 18px; }
+
+
+
+/* نموذج التواصل */
+
+form.contact-form { display: grid; gap: 16px; margin-top: 24px; }
+
+form.contact-form label { font-weight: 700; margin-bottom: 6px; display: block; }
+
+form.contact-form input, form.contact-form textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--line); background: var(--paper-light); font-family: var(--font-body); font-size: 1rem; color: var(--ink); }
+
+form.contact-form textarea { min-height: 140px; resize: vertical; }
+
+form.contact-form button { justify-self: start; background: var(--ink); color: var(--paper-light); border: none; padding: 12px 28px; font-family: var(--font-body); font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.15s ease; }
+
+form.contact-form button:hover { background: var(--ochre); }
+
+.form-status { font-size: 0.9rem; margin-top: 6px; }
+
+
+
+/* الفوتر */
+
+footer.site-footer { border-top: 3px solid var(--ink); padding: 26px 0; margin-top: 40px; font-size: 0.88rem; color: var(--ink-soft); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  * { transition: none !important; scroll-behavior: auto !important; }
+
+} 

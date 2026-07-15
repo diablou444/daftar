@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...</title>
+    <!-- كود الربط ديال AdSense كيكون هنا -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <div>
+        <a href="index.html" style="text-decoration:none;">
+          <span class="brand-title">دفتر<span>.</span></span>
+        </a>
+        <div class="brand-tagline">مقالات ونصائح كل أسبوع، بأسلوب بسيط وقريب منك</div>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="about.html">من نحن</a>
+      <a href="contact.html" class="active">تواصل معنا</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="page-content">
+    <h1>تواصل معنا</h1>
+    <p>عندك اقتراح، ملاحظة، أو باغي تشارك معنا فكرة مقال؟ عبّي هاد الفورم.</p>
+
+    <form class="contact-form" id="contactForm">
+      <div>
+        <label for="name">الاسم</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="email">البريد الإلكتروني</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="message">الرسالة</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit">إرسال</button>
+      <div class="form-status" id="formStatus"></div>
+    </form>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; width:100%;">
+    <span>© 2026 دفتر. جميع الحقوق محفوظة.</span>
+    <span><a href="about.html">من نحن</a> · <a href="contact.html">تواصل معنا</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
